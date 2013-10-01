@@ -1,4 +1,4 @@
-=== cubetech-image-slider ===
+=== cubetech-startseite ===
 Contributors: cubetech, chrigu99, svenvonarx
 Donate link: http://www.cubetech.ch
 Tags: slider, image, jquery, cubetech, content, custom, post, type, customizable, tinymce, category, filter, jquery, options
@@ -8,11 +8,11 @@ Stable tag: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-cubetech Image Slider - simple image/content slider with featured images
+cubetech Startseite - simple Frontpage vie with featured images
 
 == Description ==
 
-cubetech Image Slider - simple image/content slider with featured images
+cubetech Startseite - simple image/content slider with featured images
 
 Plugin features:
 
@@ -36,7 +36,7 @@ This section describes how to install the plugin and get it working.
                                                                                                                                                                   
 If you have an idea or a pull request, contribute here:
 
-https://github.com/cubetech/wordpress.cubetech-image-slider
+https://github.com/cubetech/wordpress.cubetech-startseite
                                                                                                                                                                   
 == Changelog ==                                                                                                                                                   
 
