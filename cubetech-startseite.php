@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: cubetech startseite
+ * Plugin Name: cubetech Startseite
  * Plugin URI: http://www.cubetech.ch
  * Description: cubetech startseite - simple startseite view with images
  * Version: 1.0
