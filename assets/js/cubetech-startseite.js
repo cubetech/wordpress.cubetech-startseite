@@ -158,18 +158,4 @@ jQuery(document).ready(function(){
 		jQuery('.content-overlay').animate({ opacity: "0" }, 500, function() { jQuery('#maximize').css('z-index','1001'); jQuery('.content-overlay').css('display','none'); jQuery('#maximize').animate({ opacity: "1" }, 200); });
 		return false;
 	});
-	
-    
-	jQuery(function() {
-	    jQuery( "#datepicker" ).datepicker({
-	        inline:true,            
-	        showOtherMonths: true,
-	        altField: "#date-start-value",
-	        altFormat: "dd. MM yy",
-	        dateFormat: "dd. MM yy",
-	        onSelect: function(dateText){
-           		jQuery('#date-start-output').html(dateText);
-		   	}
-		});
-	});  
 });

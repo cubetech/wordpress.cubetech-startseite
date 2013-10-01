@@ -16,8 +16,6 @@ include_once('lib/cubetech-shortcode.php');
 
 add_image_size( 'cubetech-startseite-icon', 855, 550, true );
 
-wp_register_style('cubetech-date-picker-css', plugins_url('assets/css/jquery-ui.css', __FILE__) );
-wp_enqueue_style('cubetech-date-picker-css');
 wp_enqueue_script('jquery');
 wp_register_script('cubetech_startseite_js', plugins_url('assets/js/cubetech-startseite.js', __FILE__), 'jquery');
 wp_enqueue_script('cubetech_startseite_js');

@@ -55,14 +55,7 @@ $cubetech_startseite_meta_fields = array(
 	    'desc'  => 'Bild im Slider',  
 	    'id'    => $prefix.'image-3',  
 	    'type'  => 'image'  
-	), 
-	array(
-		'label'=> 'Datum',
-		'desc'	=> 'Beitragsdatum',
-		'id'	=> $prefix.'date',
-		'type'	=> 'date'
 	)
-
 );
 
 // The Callback
@@ -123,10 +116,6 @@ echo '<input type="hidden" name="cubetech_startseite_meta_box_nonce" value="'.wp
 						<br clear="all" /><span class="description" style="display: inline-block; margin-top: 5px;">' . $field['desc'] . '</span>';
 
 					break;
-					case 'date':
-						echo '<input type="text" name="' . $field['id'] . '" id="datepicker" value="' . $meta . '" />';
-					break;
-
 				} //end switch
 		echo '</td></tr>';
 	} // end foreach
