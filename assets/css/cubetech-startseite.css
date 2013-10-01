@@ -1,0 +1,69 @@
+.cubetech-startseite-container {
+	/* non-important css to give some space between the carousel and the top of hte browser */
+	display: inline-block;
+	height: 550px;
+	width: 100%;
+	position: relative;
+}
+.cubetech-startseite-inner {
+	float: left; 
+	height: 550px;
+	width: 100%;
+	overflow: hidden; 
+}  
+.cubetech-startseite {
+	position: static;
+	/* moves everything one picture width left so that if the first slider button clicked is the right one, there is an image on the left to slide over to the right insteado of a blank space */
+	list-style-type: none; 
+	margin: 0px;
+	padding: 0px;
+	width:100%;
+	display: inline-block;
+}
+.cubetech-startseite li { 
+	/*z-index: 10;
+	opacity: 0;*/
+	height: 100%;
+	width: 100%;
+	padding:0px;   
+	background: transparent;  
+	margin: 0;
+	text-align: center;
+	position: absolute;
+	top: 0;
+}
+
+.cubetech-startseite li img {
+	height: 100%;
+	width: 100%;
+}
+
+#left_arrow_startseite {
+	cursor:pointer;
+	position: absolute; 
+	float: right; 
+	right: 27px;; 
+	bottom: 43px;
+	background: url('../img/arrow-left.png') no-repeat;
+	height: 45px;
+	width: 45px;
+	background-position:center; 
+	z-index: 100;
+}
+#right_arrow_startseite {
+	cursor:pointer;
+	position: absolute;
+	float: right;
+	right: -8px;;
+	bottom: 43px;
+	background: url('../img/arrow-right.png') no-repeat;
+	height: 45px;
+	width: 45px;
+	background-position:center; 
+}
+
+.cubetech-startseite-progress {
+	height: 2px;
+	position: relative;
+	bottom: 0;
+}
