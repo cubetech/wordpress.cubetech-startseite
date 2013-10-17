@@ -19,7 +19,7 @@ function cubetech_startseite_create_post_type() {
 			'taxonomies' => array('cubetech_startseite_group'),
 			'public' => true,
 			'has_archive' => false,
-			'rewrite' => array('slug' => 'startseite', 'with_front' => false),
+			'rewrite' => array('slug' => 'frontpage', 'with_front' => false),
 			'show_ui' => true,
 			'menu_position' => '20',
 			'menu_icon' => null,

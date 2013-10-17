@@ -33,7 +33,7 @@ function cubetech_startseite_shortcode($atts)
 	
 	$return .= cubetech_startseite_content($posts);
 	
-	$return .= '</div><div id="right_arrow_startseite"></div></div>';
+	$return .= '</div><div id="right_arrow_startseite"></div><div class="cubetech-startseite-progress"></div></div>';
 		
 	return $return;
 
@@ -51,17 +51,23 @@ function cubetech_startseite_content($posts) {
 		$post_meta_data = get_post_custom($post->ID);
 		$post_meta = get_post($post->ID);
 		$titlelink = array('', '');
-		foreach($post_meta_data as $p) {	
+		$youtube = $post_meta_data['cubetech_startseite_movie'];
+		
+		if($youtube) {
+			$contentreturn .= '
+			<iframe width="100%" height="100%" src="//www.youtube.com/embed/' . $youtube[0] . '" frameborder="0" allowfullscreen></iframe>';
+		}
+		foreach($post_meta_data as $p) {
 			$image = wp_get_attachment_image($p[0], 'cubetech-startseite-icon');
-			if($image) {
+			if ( $image && !$youtube ) {
 				$contentreturn .= '
-				<li class="cubetech-startseite-icon cubetech-startseite-slide-' . $i . '">
-					' . $image . '
-				</li>';
+					<li class="cubetech-startseite-icon cubetech-startseite-slide-' . $i . '">
+						' . $image . '
+					</li>';
 			}
 		}
 	}
-	return $contentreturn . '</ul> ';
+	return $contentreturn . '</ul>';
 	
 }
 function cubetech_startseite_contenttext($posts) {
