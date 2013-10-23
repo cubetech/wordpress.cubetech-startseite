@@ -51,8 +51,10 @@ function cubetech_startseite_content($posts) {
 		$post_meta_data = get_post_custom($post->ID);
 		$post_meta = get_post($post->ID);
 		$titlelink = array('', '');
-		$youtube = $post_meta_data['cubetech_startseite_movie'];
-		
+		$youtube = '';
+		if (isset($post_meta_data['cubetech_startseite_movie'])){
+			$youtube = $post_meta_data['cubetech_startseite_movie'];
+		}
 		if($youtube) {
 			$contentreturn .= '
 			<iframe width="100%" height="100%" src="//www.youtube.com/embed/' . $youtube[0] . '" frameborder="0" allowfullscreen></iframe>';

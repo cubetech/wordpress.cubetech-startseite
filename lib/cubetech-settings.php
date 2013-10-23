@@ -8,7 +8,7 @@ if(isset($_GET['settings-updated']) && $_GET['settings-updated'] == true)
 function cubetech_startseite_create_menu() {
 
 	//create new top-level menu
-	add_submenu_page('edit.php?post_type=cubetech_imgslider', 'Einstellungen', 'Einstellungen', 'edit_posts', __FILE__, 'cubetech_startseite_settings_page');
+	add_submenu_page('edit.php?post_type=cubetech_startseite', 'Einstellungen', 'Einstellungen', 'edit_posts', __FILE__, 'cubetech_startseite_settings_page');
 
 	//call register settings function
 	add_action( 'admin_init', 'register_cubetech_startseite_settings' );
