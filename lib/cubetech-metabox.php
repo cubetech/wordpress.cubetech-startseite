@@ -51,7 +51,7 @@ function getSizeOfImagesStartseite() {
 		{
 			//$data = $post_meta_data[$prefix.'image-'.$i];
 			$metaArray[] =  array(
-				'label' => 'Bild'.$i,
+				'label' => 'Bild '.$i,
 				'desc' => '',
 				'id' => $prefix.'image-'.$i,
 				'type' => 'image',);

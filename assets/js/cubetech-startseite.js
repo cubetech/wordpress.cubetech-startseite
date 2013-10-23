@@ -23,7 +23,7 @@ jQuery(function(jQuery) {
 				var lastUploadImage = jQuery('.cubetech-upload-image').last();
 				
 				if ( emptyUploadImageExist == 0 && emptyPreviewImageExist == 0 ) {
-					jQuery('#cubetech_startseite_movie').parent('td').parent('tr').before('<tr><th><label for="cubetech_startseite_image">Bild'+counter+'</label></th><td><input name="cubetech_startseite_image-'+counter+'" type="hidden" class="cubetech-upload-image cubetech-upload-image-'+counter+'" value="" /><img src="" class="cubetech-preview-image cubetech-preview-image-'+counter+' cubetech_startseite_image-'+counter+'" alt="" style="max-height: 100px;" /><br /><small><a href="#" class="cubetech-clear-image-button">Bild entfernen</a></small><br clear="all" /><span class="description" style="display: inline-block; margin-top: 5px;"></span></td></tr>');
+					jQuery('#cubetech_startseite_movie').parent('td').parent('tr').before('<tr><th><label for="cubetech_startseite_image">Bild '+counter+'</label></th><td><input name="cubetech_startseite_image-'+counter+'" type="hidden" class="cubetech-upload-image cubetech-upload-image-'+counter+'" value="" /><img src="" class="cubetech-preview-image cubetech-preview-image-'+counter+' cubetech_startseite_image-'+counter+'" alt="" style="max-height: 100px;" /><br /><small><a href="#" class="cubetech-clear-image-button">Bild entfernen</a></small><br clear="all" /><span class="description" style="display: inline-block; margin-top: 5px;"></span></td></tr>');
 				}		
 					
 				var cubetechPreviewImage = jQuery('.cubetech-preview-image[src=""]').first();
