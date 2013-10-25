@@ -2,6 +2,7 @@
 
 // Add the Meta Box
 function add_cubetech_startseite_meta_box() {
+	init_cubetech_startseite_meta_box();
 	add_meta_box(
 		'cubetech_startseite_meta_box', // $id
 		'Details des Inhaltes', // $title 
@@ -16,58 +17,62 @@ add_action('add_meta_boxes', 'add_cubetech_startseite_meta_box');
 // Field Array
 $prefix = 'cubetech_startseite_';
 
-$args = array( 'posts_per_page' => -1, 'numberposts' => -1, 'post_status' => 'publish', 'post_type' => 'post', 'order' => 'ASC', 'orderby' => 'title' ); 
-$postlist = get_posts( $args );
+function init_cubetech_startseite_meta_box() {
 
-$args = array( 'posts_per_page' => -1, 'numberposts' => -1, 'post_status' => 'publish', 'post_type' => 'page', 'order' => 'ASC', 'orderby' => 'title' ); 
-$pagelist = get_posts( $args );
-
-$options = array();
-array_push($options, array('label' => 'Keine interne Verlinkung', 'value' => 'nope'));
-array_push($options, array('label' => '', 'value' => false));
-
-array_push($options, array('label' => '----- Beiträge -----', 'value' => false));
-foreach($postlist as $p) {
-	array_push($options, array('label' => $p->post_title, 'value' => $p->ID));
-}
-
-array_push($options, array('label' => '', 'value' => false));
-array_push($options, array('label' => '----- Seiten -----', 'value' => false));
-foreach($pagelist as $p) {
-	array_push($options, array('label' => $p->post_title, 'value' => $p->ID));
-}
-
-$cubetech_startseite_meta_fields = array();
-function getSizeOfImagesStartseite() {
-	global $post;
-	global $cubetech_startseite_meta_fields;
-	$prefix = 'cubetech_startseite_';
-	$metaArray = array();
-	$post_meta_data = get_post_meta($post->ID);
-	for($i = 1; ;$i++)
-	{
-		
-		if(isset($post_meta_data[$prefix.'image-'.$i]))
-		{
-			//$data = $post_meta_data[$prefix.'image-'.$i];
-			$metaArray[] =  array(
-				'label' => 'Bild '.$i,
-				'desc' => '',
-				'id' => $prefix.'image-'.$i,
-				'type' => 'image',);
-
-		}
-		else
-		{
-			break;
-		}
+	$args = array( 'posts_per_page' => -1, 'numberposts' => -1, 'post_status' => 'publish', 'post_type' => 'post', 'order' => 'ASC', 'orderby' => 'title' ); 
+	$postlist = get_posts( $args );
+	
+	$args = array( 'posts_per_page' => -1, 'numberposts' => -1, 'post_status' => 'publish', 'post_type' => 'page', 'order' => 'ASC', 'orderby' => 'title' ); 
+	$pagelist = get_posts( $args );
+	
+	$options = array();
+	array_push($options, array('label' => 'Keine interne Verlinkung', 'value' => 'nope'));
+	array_push($options, array('label' => '', 'value' => false));
+	
+	array_push($options, array('label' => '----- Beiträge -----', 'value' => false));
+	foreach($postlist as $p) {
+		array_push($options, array('label' => $p->post_title, 'value' => $p->ID));
 	}
-	$cubetech_startseite_meta_fields = array_merge($metaArray,array(array(  
-	    'label'  => 'Youtube Video ID',  
-	    'desc'  => 'Wenn Video Link vorhanden, werden keine Bilder geladen',  
-	    'id'    => $prefix.'movie',  
-	    'type'  => 'youtube'  
-	)));
+	
+	array_push($options, array('label' => '', 'value' => false));
+	array_push($options, array('label' => '----- Seiten -----', 'value' => false));
+	foreach($pagelist as $p) {
+		array_push($options, array('label' => $p->post_title, 'value' => $p->ID));
+	}
+	
+	$cubetech_startseite_meta_fields = array();
+	function getSizeOfImagesStartseite() {
+		global $post;
+		global $cubetech_startseite_meta_fields;
+		$prefix = 'cubetech_startseite_';
+		$metaArray = array();
+		$post_meta_data = get_post_meta($post->ID);
+		for($i = 1; ;$i++)
+		{
+			
+			if(isset($post_meta_data[$prefix.'image-'.$i]))
+			{
+				//$data = $post_meta_data[$prefix.'image-'.$i];
+				$metaArray[] =  array(
+					'label' => 'Bild '.$i,
+					'desc' => '',
+					'id' => $prefix.'image-'.$i,
+					'type' => 'image',);
+	
+			}
+			else
+			{
+				break;
+			}
+		}
+		$cubetech_startseite_meta_fields = array_merge($metaArray,array(array(  
+		    'label'  => 'Youtube Video ID',  
+		    'desc'  => 'Wenn Video Link vorhanden, werden keine Bilder geladen',  
+		    'id'    => $prefix.'movie',  
+		    'type'  => 'youtube'  
+		)));
+	}
+	
 }
 
 // The Callback

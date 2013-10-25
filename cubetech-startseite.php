@@ -15,7 +15,7 @@ include_once('lib/cubetech-settings.php');
 include_once('lib/cubetech-shortcode.php');
 
 add_image_size( 'cubetech-startseite-icon', 855, 550, true );
-add_action('wp_enqueue_scripts', 'cubetech_startseite_add_styles');
+add_action('init', 'cubetech_startseite_add_styles');
 
 function cubetech_startseite_add_styles() {
 	wp_register_style('cubetech-startseite-css', plugins_url('assets/css/cubetech-startseite.css', __FILE__) );
