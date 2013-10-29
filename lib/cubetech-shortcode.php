@@ -55,13 +55,13 @@ function cubetech_startseite_content($posts) {
 		if (isset($post_meta_data['cubetech_startseite_movie'])){
 			$youtube = $post_meta_data['cubetech_startseite_movie'];
 		}
-		if($youtube) {
+		if ( $youtube[0] != '' ) {
 			$contentreturn .= '
 			<iframe width="100%" height="100%" src="//www.youtube.com/embed/' . $youtube[0] . '" frameborder="0" allowfullscreen></iframe>';
 		}
 		foreach($post_meta_data as $p) {
 			$image = wp_get_attachment_image($p[0], 'cubetech-startseite-icon');
-			if ( $image && !$youtube ) {
+			if ( $image && $youtube == '' ) {
 				$contentreturn .= '
 					<li class="cubetech-startseite-icon cubetech-startseite-slide-' . $i . '">
 						' . $image . '
