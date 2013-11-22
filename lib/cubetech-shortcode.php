@@ -60,8 +60,9 @@ function cubetech_startseite_content($posts) {
 			<iframe width="100%" height="100%" src="//www.youtube.com/embed/' . $youtube[0] . '" frameborder="0" allowfullscreen></iframe>';
 		}
 		foreach($post_meta_data as $p) {
+			
 			$image = wp_get_attachment_image($p[0], 'cubetech-startseite-icon');
-			if ( $image && $youtube == '' ) {
+			if ( $image && $youtube[0] == '' ) {
 				$contentreturn .= '
 					<li class="cubetech-startseite-icon cubetech-startseite-slide-' . $i . '">
 						' . $image . '

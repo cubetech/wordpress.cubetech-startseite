@@ -35,7 +35,7 @@
 }
 
 .cubetech-startseite li img {
-	height: 100%;
+	height: auto;
 	width: 100%;
 }
 
@@ -43,7 +43,7 @@
 	cursor:pointer;
 	position: absolute; 
 	float: right; 
-	right: 27px;; 
+	right: 27px;
 	bottom: 43px;
 	background: url('../img/arrow-left.png') no-repeat;
 	height: 45px;
@@ -55,7 +55,7 @@
 	cursor:pointer;
 	position: absolute;
 	float: right;
-	right: -8px;;
+	right: -8px;
 	bottom: 43px;
 	background: url('../img/arrow-right.png') no-repeat;
 	height: 45px;
@@ -65,6 +65,6 @@
 
 .cubetech-startseite-progress {
 	height: 2px;
-	position: relative;
-	bottom: -550px;
+	position: absolute;
+	bottom: -2px;
 }
