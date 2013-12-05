@@ -116,7 +116,7 @@ jQuery(document).ready(function(){
 	/* disables the auto moving feature when mouse is hovered over the carousel */
 	var hover_pause = 1;
 	/* sets auto moving by one image width at once every 5 seconds */
-	var auto_slide_seconds = 5000;
+	var auto_slide_seconds = 2500;
 	/* puts one image to the left of the first one so that when the right arrow is clicked there's a image to be moved over from the left. The 'left: -200px;' css makes it so that this moved over image is hidden to the left combined with the css 'overflow: hidden;' */
 
 	
