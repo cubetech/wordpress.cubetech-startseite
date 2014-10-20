@@ -21,9 +21,19 @@ function cubetech_startseite_add_styles() {
 	wp_register_style('cubetech-startseite-css', plugins_url('assets/css/cubetech-startseite.css', __FILE__) );
 	wp_enqueue_style('cubetech-startseite-css');
 	wp_enqueue_script('jquery');
-	wp_register_script('cubetech_startseite_js', plugins_url('assets/js/cubetech-startseite.js', __FILE__), 'jquery');
+	wp_register_script('cubetech_startseite_js', plugins_url('assets/js/cubetech-startseite.js', __FILE__), array('jquery','wpdialogs'));
 	wp_enqueue_script('cubetech_startseite_js');
 }
+
+if(!function_exists('enqueue_css'))
+{
+	function enqueue_css()
+	{
+		wp_register_style('custom_jquery-ui-dialog', plugins_url('assets/css/jquery-ui-dialog.min.css', __FILE__) );
+		wp_enqueue_style('custom_jquery-ui-dialog');
+	}
+	add_action( 'admin_enqueue_scripts', 'enqueue_css' );
+} 
 
 /* Add button to TinyMCE */
 function cubetech_startseite_addbuttons() {
@@ -75,7 +85,7 @@ function cubetech_startseite_dialog() {
 					?>
 				</select>
 			</p>
-			<p><input type="submit" class="button-primary" value="Startseite einfügen" onClick="if ( cubetech_startseite_posts.value != '' && cubetech_startseite_posts.value != 'undefined' ) { tinyMCE.activeEditor.execCommand('mceInsertContent', 0, '[cubetech-startseite id=' + cubetech_startseite_posts.value + ']'); tinyMCEPopup.close(); }" /></p>
+			<p><input type="submit" class="button-primary" value="Startseite einfügen" onClick="if ( cubetech_startseite_posts.value != '' && cubetech_startseite_posts.value != 'undefined' ) { tinyMCE.activeEditor.execCommand('mceInsertContent', 0, '[cubetech-startseite id=' + cubetech_startseite_posts.value + ']'); tinymce.activeEditor.windowManager.close(); }" /></p>
 		</div>
 	</div>
 	<?php
