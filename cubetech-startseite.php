@@ -25,14 +25,14 @@ function cubetech_startseite_add_styles() {
 	wp_enqueue_script('cubetech_startseite_js');
 }
 
-if(!function_exists('enqueue_css'))
+if(!function_exists('cubetech_startseite_enqueue_css'))
 {
-	function enqueue_css()
+	function cubetech_startseite_enqueue_css()
 	{
-		wp_register_style('custom_jquery-ui-dialog', plugins_url('assets/css/jquery-ui-dialog.min.css', __FILE__) );
-		wp_enqueue_style('custom_jquery-ui-dialog');
+		wp_register_style('cubetech_startseite_jquery-ui-dialog', plugins_url('assets/css/jquery-ui-dialog.min.css', __FILE__) );
+		wp_enqueue_style('cubetech_startseite_jquery-ui-dialog');
 	}
-	add_action( 'admin_enqueue_scripts', 'enqueue_css' );
+	add_action( 'admin_enqueue_scripts', 'cubetech_startseite_enqueue_css' );
 } 
 
 /* Add button to TinyMCE */
